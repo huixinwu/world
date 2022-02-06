@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="{{url_for('thankyou')}}"  method="post">
+      <fieldset style="width:60%;">
+        <legend>CHECKOUT</legend>
+        <h3>Items in your bag</h3>
+        <p id="item"></p>
+        <hr style="margin: 1em;">
+        <label for="un">Enter username:
+          <input type="text" name="username" placeholder="Type username..." id="un"> </label>
+        <label for="email">Enter email address:
+          <input type="email" name="emailAddress" placeholder="Type email address..."> </label>
+
+        <input type="submit" name="submit" value="SUBMIT ORDER" style="margin-top:2em;">
+      </fieldset>
+    </form>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+      let d = document.querySelector('#item');
+      d.innerHTML = sessionStorage.getItem('ITEM1')+"...... $ " + sessionStorage.getItem('lotion1price');
+    </script>
+  </body>
+</html>
